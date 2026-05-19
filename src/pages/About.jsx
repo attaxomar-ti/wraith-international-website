@@ -1,3 +1,4 @@
+import { useIsMobile } from '../hooks/useIsMobile';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ImageCover, SectionCount, Eyebrow, GoldLine } from '../components/ImageSection';
@@ -30,14 +31,15 @@ const LICENSES = [
 
 export default function About() {
   useScrollRevealAll();
+  const m = useIsMobile();
   return (
     <>
-      <section style={{ backgroundColor:'#111111', minHeight:'58vh', display:'flex', alignItems:'center', justifyContent:'center', flexDirection:'column', padding:'11rem 2rem 6rem', textAlign:'center' }}>
+      <section style={{ backgroundColor:'#111111', minHeight: m ? '40vh' : '58vh', display:'flex', alignItems:'center', justifyContent:'center', flexDirection:'column', padding: m ? '5.5rem 1.5rem 3rem' : '11rem 2rem 6rem', textAlign:'center' }}>
         <div className="anim-delay-2">
-          <div style={{ fontFamily:'"Libre Baskerville", Georgia, serif', fontSize:'clamp(0.7rem,1.5vw,1rem)', fontWeight:400, letterSpacing:'0.5em', textTransform:'uppercase', color:'rgba(240,239,237,0.35)', marginBottom:'1rem', paddingLeft:'0.5em' }}>
+          <div style={{ fontFamily:'"Libre Baskerville", Georgia, serif', fontSize: m ? '0.625rem' : 'clamp(0.7rem,1.5vw,1rem)', fontWeight:400, letterSpacing: m ? '0.12em' : '0.5em', textTransform:'uppercase', color:'rgba(240,239,237,0.35)', marginBottom:'1rem', paddingLeft:'0.5em' }}>
             ABOUT
           </div>
-          <div style={{ fontFamily:'"Libre Baskerville", Georgia, serif', fontSize:'clamp(1.25rem,4vw,3rem)', fontWeight:400, letterSpacing:'0.5em', textTransform:'uppercase', color:'#f0efed', lineHeight:1, paddingLeft:'0.5em' }}>
+          <div style={{ fontFamily:'"Libre Baskerville", Georgia, serif', fontSize: m ? '1.375rem' : 'clamp(1.25rem,4vw,3rem)', fontWeight:400, letterSpacing: m ? '0.1em' : '0.5em', textTransform:'uppercase', color:'#f0efed', lineHeight:1, paddingLeft:'0.5em' }}>
             WRAITH INTERNATIONAL
           </div>
         </div>
@@ -49,7 +51,7 @@ export default function About() {
 
       <GoldLine />
 
-      <section style={{ backgroundColor:'#f0efed', padding:'9rem 2rem', position:'relative' }}>
+      <section style={{ backgroundColor:'#f0efed', padding: m ? '3rem 1.25rem' : '9rem 2rem', position:'relative' }}>
         <SectionCount current={2} total={7} light={false} />
         <div style={{ maxWidth:1280, margin:'0 auto', display:'grid', gridTemplateColumns:'1fr 1.4fr', gap:'8rem', alignItems:'start' }}>
           <div>
@@ -79,7 +81,7 @@ export default function About() {
 
       <GoldLine />
 
-      <section style={{ backgroundColor:'#111111', padding:'9rem 2rem', position:'relative' }}>
+      <section style={{ backgroundColor:'#111111', padding: m ? '3rem 1.25rem' : '9rem 2rem', position:'relative' }}>
         <SectionCount current={3} total={7} />
         <div style={{ maxWidth:1280, margin:'0 auto' }}>
           <Eyebrow>History</Eyebrow>
@@ -99,12 +101,12 @@ export default function About() {
 
       <GoldLine />
 
-      <section style={{ backgroundColor:'#f0efed', padding:'9rem 2rem', position:'relative' }}>
+      <section style={{ backgroundColor:'#f0efed', padding: m ? '3rem 1.25rem' : '9rem 2rem', position:'relative' }}>
         <SectionCount current={4} total={7} light={false} />
         <div style={{ maxWidth:1280, margin:'0 auto' }}>
           <Eyebrow>How We Operate</Eyebrow>
           <h2 className="heading-display reveal" style={{ fontSize:'clamp(2.5rem,5vw,4rem)', color:'#1a1a1a', marginBottom:'5rem' }}>Our Values</h2>
-          <div style={{ display:'grid', gridTemplateColumns:'repeat(2,1fr)', border:'0.5px solid #e8e8e8' }}>
+          <div style={{ display:'grid', gridTemplateColumns: m ? '1fr' : 'repeat(2,1fr)', border:'0.5px solid #e8e8e8' }}>
             {VALUES.map((v,i) => (
               <div key={i} className="reveal" style={{ padding:'3.5rem', borderRight:i%2===0?'0.5px solid #e8e8e8':'none', borderBottom:i<2?'0.5px solid #e8e8e8':'none' }}>
                 <div style={{ width:24, height:1, backgroundColor:'#0d0d0d', marginBottom:'1.5rem' }} />
@@ -118,7 +120,7 @@ export default function About() {
 
       <GoldLine />
 
-      <section style={{ backgroundColor:'#e8e7e4', padding:'9rem 2rem', position:'relative' }}>
+      <section style={{ backgroundColor:'#e8e7e4', padding: m ? '3rem 1.25rem' : '9rem 2rem', position:'relative' }}>
         <SectionCount current={5} total={7} light={false} />
         <div style={{ maxWidth:1280, margin:'0 auto' }}>
           <Eyebrow>How We Work</Eyebrow>
@@ -141,7 +143,7 @@ export default function About() {
 
       <GoldLine />
 
-      <section style={{ backgroundColor:'#e8e7e4', padding:'8rem 2rem', borderTop:'0.5px solid #e8e8e8', position:'relative' }}>
+      <section style={{ backgroundColor:'#e8e7e4', padding: m ? '3rem 1.25rem' : '8rem 2rem', borderTop:'0.5px solid #e8e8e8', position:'relative' }}>
         <SectionCount current={6} total={7} light={false} />
         <div style={{ maxWidth:1280, margin:'0 auto' }}>
           <Eyebrow>Leadership</Eyebrow>
@@ -162,7 +164,7 @@ export default function About() {
 
       <GoldLine />
 
-      <section style={{ backgroundColor:'#f0efed', padding:'8rem 2rem', position:'relative' }}>
+      <section style={{ backgroundColor:'#f0efed', padding: m ? '3rem 1.25rem' : '8rem 2rem', position:'relative' }}>
         <SectionCount current={7} total={7} light={false} />
         <div style={{ maxWidth:1280, margin:'0 auto' }}>
           <Eyebrow>Credentials</Eyebrow>
@@ -181,7 +183,7 @@ export default function About() {
         </div>
       </section>
 
-      <section style={{ backgroundColor:'#111111', padding:'9rem 2rem', textAlign:'center' }}>
+      <section style={{ backgroundColor:'#111111', padding: m ? '3rem 1.25rem' : '9rem 2rem', textAlign:'center' }}>
         <div style={{ maxWidth:800, margin:'0 auto' }}>
           <h2 className="heading-display reveal" style={{ fontSize:'clamp(2.5rem,5vw,4.5rem)', color:'#f0efed', marginBottom:'2.5rem', fontWeight:300 }}>
             Work with a contractor that delivers.

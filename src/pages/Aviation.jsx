@@ -1,3 +1,4 @@
+import { useIsMobile } from '../hooks/useIsMobile';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ImageCover, SectionCount, Eyebrow, GoldLine } from '../components/ImageSection';

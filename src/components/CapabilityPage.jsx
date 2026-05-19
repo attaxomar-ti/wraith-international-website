@@ -1,3 +1,4 @@
+import { useIsMobile } from '../hooks/useIsMobile';
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ImageCover, SectionCount, Eyebrow, GoldLine } from './ImageSection';
@@ -11,6 +12,7 @@ export default function CapabilityPage({
   relatedLinks = [], extraCtas = [],
 }) {
   useScrollRevealAll();
+  const m = useIsMobile();
 
   const HeroWrapper = ({ children }) => {
     if (noPhoto) {
@@ -30,11 +32,11 @@ export default function CapabilityPage({
       {/* Hero */}
       <HeroWrapper>
         <SectionCount current={1} total={5} />
-        <div style={{ position:'relative', zIndex:4, padding:'11rem 2rem 6rem', textAlign:'center', display:'flex', flexDirection:'column', alignItems:'center' }}>
-          <div style={{ fontFamily:'"Libre Baskerville", Georgia, serif', fontSize:'clamp(0.625rem,1.2vw,0.875rem)', fontWeight:400, letterSpacing:'0.4em', textTransform:'uppercase', color:'rgba(240,239,237,0.35)', marginBottom:'0.875rem', paddingLeft:'0.4em' }}>
+        <div style={{ position:'relative', zIndex:4, padding: m ? '6rem 1.5rem 3rem' : '11rem 2rem 6rem', textAlign:'center', display:'flex', flexDirection:'column', alignItems:'center' }}>
+          <div style={{ fontFamily:'"Libre Baskerville", Georgia, serif', fontSize: m ? '0.5625rem' : 'clamp(0.625rem,1.2vw,0.875rem)', fontWeight:400, letterSpacing: m ? '0.1em' : '0.4em', textTransform:'uppercase', color:'rgba(240,239,237,0.35)', marginBottom:'0.875rem', paddingLeft:'0.4em' }}>
             {tag}
           </div>
-          <h1 style={{ fontFamily:'"Libre Baskerville", Georgia, serif', fontSize:'clamp(1.25rem,4vw,3rem)', fontWeight:400, letterSpacing:'0.45em', textTransform:'uppercase', color:'#f0efed', lineHeight:1.15, paddingLeft:'0.45em', maxWidth:900, textAlign:'center', marginBottom:'2rem' }}>
+          <h1 style={{ fontFamily:'"Libre Baskerville", Georgia, serif', fontSize: m ? '1.375rem' : 'clamp(1.25rem,4vw,3rem)', fontWeight:400, letterSpacing: m ? '0.1em' : '0.45em', textTransform:'uppercase', color:'#f0efed', lineHeight:1.15, paddingLeft: m ? '0.1em' : '0.45em', maxWidth:900, textAlign:'center', marginBottom:'2rem' }}>
             {title}
           </h1>
           <div style={{ width:48, height:'0.5px', backgroundColor:'rgba(240,239,237,0.2)', marginBottom:'2rem' }} />
@@ -47,8 +49,8 @@ export default function CapabilityPage({
       <GoldLine />
 
       {/* Body copy */}
-      <section style={{ backgroundColor: '#f0efed', padding: '8rem 2rem' }}>
-        <div style={{ maxWidth: 1280, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: '8rem', alignItems: 'start' }}>
+      <section style={{ backgroundColor: '#f0efed', padding: m ? '3rem 1.25rem' : '8rem 2rem' }}>
+        <div style={{ maxWidth: 1280, margin: '0 auto', display: 'grid', gridTemplateColumns: m ? '1fr' : '1fr 1.5fr', gap: m ? '2rem' : '8rem', alignItems: 'start' }}>
           <div>
             <SectionCount current={2} total={5} light={false} style={{ position: 'static', display: 'block', textAlign: 'right', marginBottom: '2rem' }} />
             <Eyebrow light={false}>What We Do</Eyebrow>
@@ -77,12 +79,12 @@ export default function CapabilityPage({
       <GoldLine />
 
       {/* Who We Serve */}
-      <section style={{ backgroundColor: '#111111', padding: '7rem 2rem', position: 'relative' }}>
+      <section style={{ backgroundColor: '#111111', padding: m ? '3rem 1.25rem' : '7rem 2rem', position: 'relative' }}>
         <SectionCount current={3} total={5} />
         <div style={{ maxWidth: 1280, margin: '0 auto' }}>
           <Eyebrow>Who We Serve</Eyebrow>
           <h2 className="heading-display reveal" style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)', color: '#f0efed', marginBottom: '4rem' }}>Clients & Agencies</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))', gap: '0', border: '0.5px solid rgba(255,255,255,0.08)' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: m ? '1fr 1fr' : 'repeat(auto-fill, minmax(240px, 1fr))', gap: '0', border: '0.5px solid rgba(255,255,255,0.08)' }}>
             {whoWeServe.map((c, i) => (
               <div key={i} className="reveal" style={{ padding: '1.75rem 2rem', borderRight: '0.5px solid rgba(255,255,255,0.08)', borderBottom: '0.5px solid rgba(255,255,255,0.08)', display: 'flex', alignItems: 'center', gap: '1rem' }}>
                 <span style={{ width: 3, height: 3, borderRadius: '50%', backgroundColor: '#0d0d0d', flexShrink: 0 }} />
@@ -96,9 +98,9 @@ export default function CapabilityPage({
       <GoldLine />
 
       {/* Advantage */}
-      <section style={{ backgroundColor: '#f0efed', padding: '7rem 2rem', position: 'relative' }}>
+      <section style={{ backgroundColor: '#f0efed', padding: m ? '3rem 1.25rem' : '7rem 2rem', position: 'relative' }}>
         <SectionCount current={4} total={5} light={false} />
-        <div style={{ maxWidth: 1280, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8rem', alignItems: 'center' }}>
+        <div style={{ maxWidth: 1280, margin: '0 auto', display: 'grid', gridTemplateColumns: m ? '1fr' : '1fr 1fr', gap: m ? '2rem' : '8rem', alignItems: 'center' }}>
           <div>
             <Eyebrow>Our Edge</Eyebrow>
             <h2 className="heading-display reveal" style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)', color: '#1a1a1a' }}>{advantageTitle}</h2>
@@ -114,13 +116,13 @@ export default function CapabilityPage({
       <GoldLine />
 
       {/* CTA */}
-      <section style={{ backgroundColor: '#111111', padding: '8rem 2rem', textAlign: 'center', position: 'relative' }}>
+      <section style={{ backgroundColor: '#111111', padding: m ? '3rem 1.25rem' : '8rem 2rem', textAlign: 'center', position: 'relative' }}>
         <SectionCount current={5} total={5} />
         <div style={{ maxWidth: 700, margin: '0 auto' }}>
           <h2 className="heading-display reveal" style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)', color: '#f0efed', marginBottom: '2.5rem', fontWeight: 300 }}>
             Have a requirement? We can help.
           </h2>
-          <div className="reveal" style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap', marginBottom: (relatedLinks.length || extraCtas.length) ? '3rem' : 0 }}>
+          <div className="reveal" style={{ display: 'flex', flexDirection: m ? 'column' : 'row', gap: '0.75rem', justifyContent: 'center', alignItems: 'center', marginBottom: (relatedLinks.length || extraCtas.length) ? '3rem' : 0 }}>
             <Link to="/contact" className="btn-primary">Request Briefing</Link>
             {extraCtas.map((cta, i) => (
               <a key={i} href={cta.href} target={cta.external ? '_blank' : undefined} rel={cta.external ? 'noopener noreferrer' : undefined} className="btn-ghost-dark">{cta.label}</a>

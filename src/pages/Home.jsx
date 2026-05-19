@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { SectionCount, Eyebrow, GoldLine, Diamond } from '../components/ImageSection';
 import ParallaxImage from '../components/ParallaxImage';
 import { useScrollRevealAll } from '../hooks/useScrollReveal';
+import { useIsMobile } from '../hooks/useIsMobile';
 
 const IMGS = {
   hero:     'https://images.unsplash.com/photo-1451187580459-43490279c0fa',
@@ -62,6 +63,7 @@ const GLOBAL = [
 
 export default function Home() {
   useScrollRevealAll();
+  const m = useIsMobile();
 
   return (
     <>
@@ -70,73 +72,64 @@ export default function Home() {
         src={IMGS.hero}
         overlay={0.72}
         speed={0.25}
-        style={{ minHeight:'100vh', display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center' }}
+        style={{ minHeight: m ? '100svh' : '100vh', display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center' }}
       >
-        <SectionCount current={1} total={9} />
+        {!m && <SectionCount current={1} total={9} />}
 
-        {/* Centered hero content */}
-        <div style={{ textAlign:'center', padding:'10rem 2rem 6rem', width:'100%', display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', flex:1 }}>
+        <div style={{ textAlign:'center', padding: m ? '6rem 1.5rem 3rem' : '10rem 2rem 6rem', width:'100%', display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', flex:1 }}>
 
-          {/* Two-line tracked name */}
-          <div className="anim-delay-2">
-            <div className="hero-line-1" style={{
-              fontFamily:'"Libre Baskerville", Georgia, serif',
-              fontSize:'clamp(1.5rem, 5vw, 4rem)',
-              fontWeight:400,
-              letterSpacing:'0.55em',
-              textTransform:'uppercase',
-              color:'#f0efed',
-              lineHeight:1,
-              textAlign:'center',
-              marginBottom:'0.5rem',
-              paddingLeft:'0.55em',
-            }}>
-              WRAITH
-            </div>
-            <div className="hero-line-2" style={{
-              fontFamily:'"Libre Baskerville", Georgia, serif',
-              fontSize:'clamp(0.7rem, 2vw, 1.625rem)',
-              fontWeight:400,
-              letterSpacing:'0.55em',
-              textTransform:'uppercase',
-              color:'rgba(240,239,237,0.75)',
-              lineHeight:1,
-              textAlign:'center',
-              marginBottom:'3rem',
-              paddingLeft:'0.55em',
-            }}>
-              INTERNATIONAL
-            </div>
-          </div>
+          {/* WRAITH */}
+          <div className="anim-delay-2" style={{
+            fontFamily:'"Libre Baskerville", Georgia, serif',
+            fontSize: m ? '2.25rem' : 'clamp(1.5rem,5vw,4rem)',
+            fontWeight:400,
+            letterSpacing: m ? '0.18em' : '0.55em',
+            textTransform:'uppercase',
+            color:'#f0efed',
+            lineHeight:1,
+            textAlign:'center',
+            marginBottom: m ? '0.375rem' : '0.5rem',
+            paddingLeft: m ? '0.18em' : '0.55em',
+          }}>WRAITH</div>
 
-          {/* Rule */}
-          <div className="anim-delay-3" style={{ width:60, height:'0.5px', backgroundColor:'rgba(240,239,237,0.35)', marginBottom:'2rem' }} />
+          {/* INTERNATIONAL */}
+          <div className="anim-delay-2" style={{
+            fontFamily:'"Libre Baskerville", Georgia, serif',
+            fontSize: m ? '0.9rem' : 'clamp(0.7rem,2vw,1.625rem)',
+            fontWeight:400,
+            letterSpacing: m ? '0.18em' : '0.55em',
+            textTransform:'uppercase',
+            color:'rgba(240,239,237,0.7)',
+            lineHeight:1,
+            textAlign:'center',
+            marginBottom: m ? '1.75rem' : '3rem',
+            paddingLeft: m ? '0.18em' : '0.55em',
+          }}>INTERNATIONAL</div>
 
-          {/* Tagline */}
+          <div className="anim-delay-3" style={{ width:40, height:'0.5px', backgroundColor:'rgba(240,239,237,0.3)', marginBottom: m ? '1.5rem' : '2rem' }} />
+
           <p className="anim-delay-3" style={{
             fontFamily:'"Cormorant Garamond", Georgia, serif',
-            fontSize:'clamp(0.875rem, 1.5vw, 1.125rem)',
+            fontSize: m ? '0.9375rem' : 'clamp(0.875rem,1.5vw,1.125rem)',
             fontWeight:300, fontStyle:'italic',
             color:'rgba(240,239,237,0.5)',
-            letterSpacing:'0.12em',
-            marginBottom:'3.5rem',
-          }}>
-            Full Spectrum International Government Contracting
-          </p>
+            letterSpacing:'0.06em',
+            marginBottom: m ? '2rem' : '3.5rem',
+            padding: m ? '0 0.5rem' : 0,
+            textAlign:'center',
+          }}>Full Spectrum International Government Contracting</p>
 
-          {/* CTAs */}
-          <div className="anim-delay-4" style={{ display:'flex', flexWrap:'wrap', gap:'1rem', justifyContent:'center' }}>
-            <Link to="/capabilities" className="btn-primary">Our Capabilities</Link>
-            <Link to="/contact" className="btn-ghost-dark">Request Briefing</Link>
+          <div className="anim-delay-4" style={{ display:'flex', flexDirection: m ? 'column' : 'row', gap:'0.75rem', alignItems:'center', width: m ? '100%' : 'auto', padding: m ? '0 1rem' : 0 }}>
+            <Link to="/capabilities" className="btn-primary" style={{ width: m ? '100%' : 'auto', justifyContent:'center' }}>Our Capabilities</Link>
+            <Link to="/contact" className="btn-ghost-dark" style={{ width: m ? '100%' : 'auto', justifyContent:'center' }}>Request Briefing</Link>
           </div>
         </div>
-
       </ParallaxImage>
 
       <GoldLine />
 
       {/* ── CAPABILITIES GRID ────────────────────────── */}
-      <section style={{ backgroundColor:'#f0efed', padding:'9rem 2rem', position:'relative' }}>
+      <section style={{ backgroundColor:'#f0efed', padding:'var(--sp,9rem) var(--sh,2rem)', position:'relative' }}>
         <SectionCount current={2} total={9} light={false} />
         <div style={{ maxWidth:1280, margin:'0 auto' }}>
           <div style={{ display:'flex', alignItems:'flex-end', justifyContent:'space-between', marginBottom:'5rem', flexWrap:'wrap', gap:'2rem' }}>
@@ -146,15 +139,15 @@ export default function Home() {
             </div>
             <Link to="/capabilities" className="btn-ghost-light reveal">All Capabilities →</Link>
           </div>
-          <div className="grid-3col-main" style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', border:'0.5px solid #e8e8e8' }}>
+          <div style={{ display:'grid', gridTemplateColumns: m ? '1fr' : 'repeat(3,1fr)', border:'0.5px solid #e8e8e8' }}>
             {CAPABILITIES.map((cap,i) => (
               <Link key={i} to={cap.to} style={{ textDecoration:'none' }}>
                 <div
                   className="cap-card card-lift reveal"
                   style={{
                     position:'relative',
-                    borderRight:i%3!==2?'0.5px solid #e8e8e8':'none',
-                    borderBottom:i<3?'0.5px solid #e8e8e8':'none',
+                    borderRight: m ? 'none' : (i%3!==2?'0.5px solid #e8e8e8':'none'),
+                    borderBottom:'0.5px solid #e8e8e8',
                     overflow:'hidden', backgroundColor:'#f0efed',
                     transition:'background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease',
                   }}
@@ -214,7 +207,7 @@ export default function Home() {
         <div style={{ maxWidth:1280, margin:'0 auto' }}>
           <Eyebrow>Trusted By</Eyebrow>
           <h2 className="heading-display reveal" style={{ fontSize:'clamp(2.5rem,5vw,4rem)', color:'#1a1a1a', marginBottom:'4rem' }}>Our Clients</h2>
-          <div className='grid-3col-main' style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill,minmax(220px,1fr))', border:'0.5px solid #e8e8e8' }}>
+          <div style={{ display:'grid', gridTemplateColumns: m ? '1fr 1fr' : 'repeat(auto-fill,minmax(220px,1fr))', border:'0.5px solid #e8e8e8' }}>
             {CLIENTS.map((client,i) => (
               <div key={i} className="reveal" style={{ padding:'2rem', borderRight:'0.5px solid #e8e8e8', borderBottom:'0.5px solid #e8e8e8', transition:'background-color 0.2s ease' }}
                 onMouseEnter={e => e.currentTarget.style.backgroundColor='#f8f8f8'}
@@ -234,7 +227,7 @@ export default function Home() {
 
       {/* ── FEATURE SECTION ──────────────────────────── */}
       <section style={{ backgroundColor:'#111111', padding:'9rem 2rem' }}>
-        <div className='mobile-stack' style={{ maxWidth:1280, margin:'0 auto', display:'grid', gridTemplateColumns:'1fr 1fr', gap:'8rem', alignItems:'start' }}>
+        <div style={{ maxWidth:1280, margin:'0 auto', display:'grid', gridTemplateColumns: m ? '1fr' : '1fr 1fr', gap: m ? '2rem' : '8rem', alignItems:'start' }}>
           <div>
             <Eyebrow light>Where We Go</Eyebrow>
             <h2 className="heading-display reveal" style={{ fontSize:'clamp(2.5rem,5vw,4.5rem)', color:'#f0efed', lineHeight:1.1, marginBottom:'2rem' }}>
@@ -287,7 +280,7 @@ export default function Home() {
           <h2 className="heading-display reveal" style={{ fontSize:'clamp(2.5rem,5vw,4rem)', color:'#1a1a1a', marginBottom:'4rem' }}>Where Wraith Operates</h2>
           <div style={{ border:'0.5px solid #e8e8e8' }}>
             {GLOBAL.map((g,i) => (
-              <div key={i} className="reveal" style={{ display:'grid', gridTemplateColumns:'220px 1fr', gap:'3rem', padding:'1.875rem 2rem', borderBottom:i<GLOBAL.length-1?'0.5px solid #e8e8e8':'none', alignItems:'baseline', transition:'background-color 0.2s ease' }}
+              <div key={i} className="reveal" style={{ display:'grid', gridTemplateColumns: m ? '1fr' : '220px 1fr', gap: m ? '0.25rem' : '3rem', padding: m ? '1.25rem' : '1.875rem 2rem', borderBottom:i<GLOBAL.length-1?'0.5px solid #e8e8e8':'none', alignItems:'baseline', transition:'background-color 0.2s ease' }}
                 onMouseEnter={e => e.currentTarget.style.backgroundColor='#f9f9f9'}
                 onMouseLeave={e => e.currentTarget.style.backgroundColor='transparent'}
               >
@@ -310,7 +303,7 @@ export default function Home() {
         <div style={{ maxWidth:1280, margin:'0 auto' }}>
           <Eyebrow>Our Edge</Eyebrow>
           <h2 className="heading-display reveal" style={{ fontSize:'clamp(2.5rem,5vw,4rem)', color:'#f0efed', marginBottom:'5rem' }}>Why Wraith International</h2>
-          <div className='grid-3col-main' style={{ display:'grid', gridTemplateColumns:'repeat(2,1fr)', border:'0.5px solid rgba(255,255,255,0.08)' }}>
+          <div style={{ display:'grid', gridTemplateColumns: m ? '1fr' : 'repeat(2,1fr)', border:'0.5px solid rgba(255,255,255,0.08)' }}>
             {WHY.map((w,i) => (
               <div key={i} className="reveal" style={{ padding:'3.5rem', borderRight:i%2===0?'0.5px solid rgba(255,255,255,0.08)':'none', borderBottom:i<2?'0.5px solid rgba(255,255,255,0.08)':'none', transition:'background-color 0.3s ease' }}
                 onMouseEnter={e => e.currentTarget.style.backgroundColor='rgba(255,255,255,0.02)'}
@@ -329,7 +322,7 @@ export default function Home() {
 
       {/* ── AUTOMATA CALLOUT ─────────────────────────── */}
       <section style={{ backgroundColor:'#f0efed', padding:0, overflow:'hidden' }}>
-        <div className='mobile-stack' style={{ display:'grid', gridTemplateColumns:'1fr 1fr', minHeight:560 }}>
+        <div style={{ display: m ? 'flex' : 'grid', flexDirection:'column', gridTemplateColumns: m ? undefined : '1fr 1fr', minHeight: m ? 'auto' : 560 }}>
           <div style={{ position:'relative', overflow:'hidden' }}>
             <img src={IMGS.aviation} alt="" loading="lazy"
               style={{ width:'100%', height:'100%', objectFit:'cover', position:'absolute', inset:0, transition:'transform 0.8s cubic-bezier(0.4,0,0.2,1)' }}

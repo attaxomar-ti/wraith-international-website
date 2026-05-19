@@ -1,3 +1,4 @@
+import { useIsMobile } from '../hooks/useIsMobile';
 import React, { useState } from 'react';
 import { useScrollRevealAll } from '../hooks/useScrollReveal';
 
@@ -38,6 +39,7 @@ function validate(form) {
 
 export default function Contact() {
   useScrollRevealAll();
+  const m = useIsMobile();
 
   const [form, setForm] = useState({ name: '', organization: '', email: '', phone: '', subject: '', message: '' });
   const [errors, setErrors] = useState({});
@@ -66,7 +68,7 @@ export default function Contact() {
   return (
     <>
       {/* Hero */}
-      <section style={{ backgroundColor:'#111111', minHeight:'52vh', display:'flex', alignItems:'center', justifyContent:'center', flexDirection:'column', padding:'11rem 2rem 6rem', textAlign:'center' }}>
+      <section style={{ backgroundColor:'#111111', minHeight: m ? '38vh' : '52vh', display:'flex', alignItems:'center', justifyContent:'center', flexDirection:'column', padding: m ? '5.5rem 1.5rem 3rem' : '11rem 2rem 6rem', textAlign:'center' }}>
         <div className="anim-delay-2">
           <div style={{ fontFamily:'"Libre Baskerville", Georgia, serif', fontSize:'clamp(0.7rem,1.5vw,1rem)', fontWeight:400, letterSpacing:'0.5em', textTransform:'uppercase', color:'rgba(240,239,237,0.35)', marginBottom:'1rem', paddingLeft:'0.5em' }}>
             REQUEST A
@@ -79,8 +81,8 @@ export default function Contact() {
       </section>
 
       {/* Contact split layout */}
-      <section style={{ backgroundColor: '#f0efed', padding: '8rem 2rem' }}>
-        <div style={{ maxWidth: 1280, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1.6fr', gap: '8rem', alignItems: 'start' }}>
+      <section style={{ backgroundColor: '#f0efed', padding: m ? '3rem 1.25rem' : '8rem 2rem' }}>
+        <div style={{ maxWidth: 1280, margin: '0 auto', display: 'grid', gridTemplateColumns: m ? '1fr' : '1fr 1.6fr', gap: m ? '2.5rem' : '8rem', alignItems: 'start' }}>
 
           {/* Left — info */}
           <div>
@@ -122,7 +124,7 @@ export default function Contact() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} noValidate>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2.5rem', marginBottom: '2.5rem' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: m ? '1fr' : '1fr 1fr', gap: '1.5rem', marginBottom: '2rem' }}>
                   {[
                     { field: 'name', label: 'Full Name', type: 'text', placeholder: 'Your full name' },
                     { field: 'organization', label: 'Organization', type: 'text', placeholder: 'Agency or company' },
