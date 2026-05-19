@@ -87,10 +87,26 @@ body {
   /* ── Typography ───────────────────────────────── */
   .heading-display { letter-spacing: -0.01em !important; }
 
-  /* Tracked hero headings */
-  [style*="letterSpacing:'0.55em'"] { letter-spacing: 0.25em !important; font-size: clamp(1.5rem,8vw,3rem) !important; }
-  [style*="letterSpacing:'0.5em'"] { letter-spacing: 0.2em !important; }
-  [style*="letterSpacing:'0.45em'"] { letter-spacing: 0.2em !important; }
+  /* Tracked hero headings — compress heavily on mobile */
+  [style*="letterSpacing:'0.55em'"] {
+    letter-spacing: 0.12em !important;
+    font-size: clamp(1.75rem, 7vw, 2.5rem) !important;
+    padding-left: 0.12em !important;
+    word-spacing: 0.1em !important;
+  }
+  [style*="letterSpacing:'0.5em'"] {
+    letter-spacing: 0.1em !important;
+    font-size: clamp(1.25rem, 6vw, 2rem) !important;
+    padding-left: 0.1em !important;
+  }
+  [style*="letterSpacing:'0.45em'"] {
+    letter-spacing: 0.1em !important;
+    padding-left: 0.1em !important;
+  }
+  [style*="letterSpacing:'0.4em'"] {
+    letter-spacing: 0.08em !important;
+    padding-left: 0.08em !important;
+  }
 
   /* ── Buttons → stack on mobile ────────────────── */
   .btn-primary, .btn-ghost-dark, .btn-ghost-light {
