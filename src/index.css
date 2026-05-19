@@ -31,9 +31,124 @@ body {
   .grid-3 { grid-template-columns: repeat(2,1fr) !important; }
   .grid-2-1 { grid-template-columns: 1fr !important; gap: 4rem !important; }
 }
+
 @media (max-width: 768px) {
+  /* Utility */
   .grid-3, .grid-2 { grid-template-columns: 1fr !important; }
   .hide-mobile { display: none !important; }
+
+  /* ── Section padding ──────────────────────────── */
+  section { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
+  section[style*="9rem"], section[style*="8rem"] {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+  }
+
+  /* ── All inline grids → single column ────────── */
+  [style*="grid-template-columns: repeat(3"] { grid-template-columns: 1fr !important; }
+  [style*="grid-template-columns: repeat(2"] { grid-template-columns: 1fr !important; }
+  [style*="grid-template-columns: '1fr 1fr'"] { grid-template-columns: 1fr !important; }
+  [style*="grid-template-columns: 1fr 1fr"] { grid-template-columns: 1fr !important; }
+  [style*="grid-template-columns: 1fr 1.5fr"] { grid-template-columns: 1fr !important; }
+  [style*="grid-template-columns: 1fr 1.6fr"] { grid-template-columns: 1fr !important; }
+  [style*="grid-template-columns: 1fr 2fr"] { grid-template-columns: 1fr !important; }
+  [style*="grid-template-columns: 2fr 1fr"] { grid-template-columns: 1fr !important; }
+  [style*="grid-template-columns: 220px"] { grid-template-columns: 1fr !important; }
+  [style*="grid-template-columns: '2fr 1fr"] { grid-template-columns: 1fr !important; }
+  [style*="grid-template-columns: repeat(4"] { grid-template-columns: repeat(2,1fr) !important; }
+  [style*="grid-template-columns: repeat(auto-fill"] { grid-template-columns: 1fr !important; }
+  [style*="grid-template-columns: repeat(auto-fit"] { grid-template-columns: 1fr !important; }
+
+  /* ── Gap reductions ───────────────────────────── */
+  [style*="gap: '8rem'"], [style*="gap:'8rem'"] { gap: 2rem !important; }
+  [style*="gap: '6rem'"] { gap: 2rem !important; }
+  [style*="gap: '4rem'"] { gap: 1.5rem !important; }
+  [style*="gap: '3rem'"] { gap: 1.25rem !important; }
+
+  /* ── Hero sections ────────────────────────────── */
+  [style*="minHeight:'100vh'"] { min-height: 80vh !important; }
+  [style*="minHeight:'90vh'"] { min-height: 60vh !important; }
+  [style*="minHeight:'85vh'"] { min-height: 55vh !important; }
+  [style*="minHeight:'75vh'"] { min-height: 50vh !important; }
+  [style*="minHeight:'62vh'"] { min-height: 45vh !important; }
+  [style*="minHeight:'58vh'"] { min-height: 40vh !important; }
+  [style*="minHeight:'52vh'"] { min-height: 38vh !important; }
+  [style*="minHeight:'42vh'"] { min-height: 35vh !important; }
+
+  /* Hero padding */
+  [style*="padding:'10rem 2rem'"] { padding: 7rem 1.25rem 3rem !important; }
+  [style*="padding:'11rem 2rem'"] { padding: 8rem 1.25rem 4rem !important; }
+  [style*="padding:'12rem 2rem'"] { padding: 8rem 1.25rem 4rem !important; }
+  [style*="padding:'10rem 2rem 8rem 4rem'"] { padding: 7rem 1.25rem 3rem !important; }
+
+  /* ── Two-column side-by-side layouts → stack ── */
+  [style*="display:'grid'"][style*="1fr 1fr"] { gap: 2.5rem !important; }
+
+  /* ── Typography ───────────────────────────────── */
+  .heading-display { letter-spacing: -0.01em !important; }
+
+  /* Tracked hero headings */
+  [style*="letterSpacing:'0.55em'"] { letter-spacing: 0.25em !important; font-size: clamp(1.5rem,8vw,3rem) !important; }
+  [style*="letterSpacing:'0.5em'"] { letter-spacing: 0.2em !important; }
+  [style*="letterSpacing:'0.45em'"] { letter-spacing: 0.2em !important; }
+
+  /* ── Buttons → stack on mobile ────────────────── */
+  .btn-primary, .btn-ghost-dark, .btn-ghost-light {
+    width: 100%;
+    justify-content: center;
+    padding: 0.875rem 1.25rem !important;
+  }
+
+  /* ── Footer ───────────────────────────────────── */
+  footer [style*="grid-template-columns: '2fr 1fr 1fr 1fr'"] { grid-template-columns: 1fr 1fr !important; }
+  footer [style*="grid-template-columns: '1fr 1fr'"] { grid-template-columns: 1fr !important; }
+
+  /* ── Market rows ──────────────────────────────── */
+  .market-row { flex-direction: column !important; align-items: flex-start !important; gap: 0.75rem !important; padding-left: 0 !important; }
+  .market-row p { text-align: left !important; }
+
+  /* ── Global presence table ────────────────────── */
+  [style*="grid-template-columns: '220px 1fr'"] { grid-template-columns: 1fr !important; gap: 0.25rem !important; }
+
+  /* ── Capability cards border fixes ────────────── */
+  .cap-card[style*="borderRight"] { border-right: none !important; }
+  .cap-card[style*="borderBottom"] { border-bottom: 0.5px solid #e8e8e8 !important; }
+
+  /* ── Stats grid ───────────────────────────────── */
+  [style*="grid-template-columns: '1fr 1fr'"][style*="gap:'1px'"] { grid-template-columns: 1fr 1fr !important; }
+
+  /* ── Why Wraith grid ──────────────────────────── */
+  [style*="grid-template-columns: 'repeat(2,1fr)'"] { grid-template-columns: 1fr !important; }
+
+  /* ── Split image panels ───────────────────────── */
+  [style*="minHeight: 560"] { min-height: auto !important; }
+  [style*="minHeight:560"] { min-height: auto !important; }
+
+  /* ── News grid ────────────────────────────────── */
+  [style*="grid-template-columns: 'repeat(3, 1fr)'"] { grid-template-columns: 1fr !important; }
+
+  /* ── Contact form ─────────────────────────────── */
+  [style*="grid-template-columns: '1fr 1fr'"][style*="gap: '2.5rem'"] { grid-template-columns: 1fr !important; }
+
+  /* ── Footer ──────────────────────────────────── */
+  .footer-grid { grid-template-columns: 1fr 1fr !important; gap: 2rem !important; padding: 3rem 1.25rem !important; }
+  .footer-briefing { grid-template-columns: 1fr !important; gap: 2.5rem !important; padding: 3rem 1.25rem !important; }
+
+  /* ── Overflow protection ──────────────────────── */
+  body { overflow-x: hidden; }
+  * { max-width: 100%; box-sizing: border-box; }
+  img { max-width: 100%; height: auto; }
+
+  /* ── Padding on inner content divs ───────────── */
+  [style*="padding:'3.5rem'"] { padding: 2rem !important; }
+  [style*="padding:'3rem'"] { padding: 1.75rem !important; }
+  [style*="padding:'2.5rem'"] { padding: 1.5rem !important; }
+  [style*="padding:'5rem 4rem'"] { padding: 2.5rem 1.5rem !important; }
+
+  /* ── Article/legal reading width ─────────────── */
+  [style*="maxWidth: 820"] { max-width: 100% !important; }
+  [style*="maxWidth: 900"] { max-width: 100% !important; }
+  [style*="maxWidth: 1280"] { max-width: 100% !important; }
 }
 
 /* ─── Ticker ────────────────────────────────────── */

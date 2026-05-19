@@ -18,7 +18,7 @@ export default function Footer() {
     <footer style={{ backgroundColor:'#111111', color:'#f0efed' }}>
       {/* Briefing request bar */}
       <div style={{ borderBottom:'0.5px solid rgba(255,255,255,0.08)' }}>
-        <div style={{ maxWidth:1280, margin:'0 auto', padding:'5rem 2rem', display:'grid', gridTemplateColumns:'1fr 1fr', gap:'6rem', alignItems:'center' }}>
+        <div className="footer-briefing" style={{ maxWidth:1280, margin:'0 auto', padding:'5rem 2rem', display:'grid', gridTemplateColumns:'1fr 1fr', gap:'6rem', alignItems:'center' }}>
           <div>
             <span style={{ fontFamily:'"Libre Baskerville"', fontSize:'0.6875rem', fontWeight:500, letterSpacing:'0.2em', textTransform:'uppercase', color:'#0d0d0d', display:'block', marginBottom:'1rem' }}>REQUEST A BRIEFING</span>
             <h3 className="heading-display" style={{ fontSize:'clamp(1.75rem,3vw,2.75rem)', color:'#f0efed', marginBottom:'1rem' }}>
@@ -62,7 +62,7 @@ export default function Footer() {
       </div>
 
       {/* Main footer columns */}
-      <div style={{ maxWidth:1280, margin:'0 auto', padding:'5rem 2rem 3rem', display:'grid', gridTemplateColumns:'2fr 1fr 1fr 1fr', gap:'3rem' }}>
+      <div className="footer-grid" style={{ maxWidth:1280, margin:'0 auto', padding:'5rem 2rem 3rem', display:'grid', gridTemplateColumns:'2fr 1fr 1fr 1fr', gap:'3rem' }}>
         <div>
           <img src="/wraith-logo.jpg" alt="Wraith International" style={{ height:30, width:'auto', filter:'invert(1) brightness(2)', marginBottom:'1.5rem', display:'block', opacity:0.85 }} />
           <p style={{ fontFamily:'"Libre Baskerville"', fontSize:'0.875rem', color:'rgba(255,255,255,0.3)', lineHeight:1.75, maxWidth:300, marginBottom:'2rem' }}>
