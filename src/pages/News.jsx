@@ -20,7 +20,7 @@ export default function News() {
     <>
       {/* Hero */}
       <section style={{ backgroundColor:'#111111', minHeight:'52vh', display:'flex', alignItems:'center', justifyContent:'center', flexDirection:'column', padding:'11rem 2rem 6rem', textAlign:'center' }}>
-        <div className="anim-delay-2" style={{ fontFamily:'"Libre Baskerville", Georgia, serif', fontSize:'clamp(1.25rem,4vw,3rem)', fontWeight:400, letterSpacing:'0.5em', textTransform:'uppercase', color:'#f0efed', paddingLeft:'0.5em' }}>
+        <div className="anim-delay-2 page-hero-main" style={{ fontFamily:'"Libre Baskerville", Georgia, serif', fontSize:'clamp(1.25rem,4vw,3rem)', fontWeight:400, letterSpacing:'0.5em', textTransform:'uppercase', color:'#f0efed', paddingLeft:'0.5em' }}>
           NEWSROOM
         </div>
         <div style={{ width:48, height:'0.5px', backgroundColor:'rgba(240,239,237,0.2)', margin:'2rem auto 0' }} />

@@ -79,7 +79,7 @@ export default function Home() {
 
           {/* Two-line tracked name */}
           <div className="anim-delay-2">
-            <div style={{
+            <div className="hero-line-1" style={{
               fontFamily:'"Libre Baskerville", Georgia, serif',
               fontSize:'clamp(1.5rem, 5vw, 4rem)',
               fontWeight:400,
@@ -89,11 +89,11 @@ export default function Home() {
               lineHeight:1,
               textAlign:'center',
               marginBottom:'0.5rem',
-              paddingLeft:'0.55em', /* offset for last letter */
+              paddingLeft:'0.55em',
             }}>
               WRAITH
             </div>
-            <div style={{
+            <div className="hero-line-2" style={{
               fontFamily:'"Libre Baskerville", Georgia, serif',
               fontSize:'clamp(0.7rem, 2vw, 1.625rem)',
               fontWeight:400,
@@ -146,7 +146,7 @@ export default function Home() {
             </div>
             <Link to="/capabilities" className="btn-ghost-light reveal">All Capabilities →</Link>
           </div>
-          <div style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', border:'0.5px solid #e8e8e8' }}>
+          <div className="grid-3col-main" style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', border:'0.5px solid #e8e8e8' }}>
             {CAPABILITIES.map((cap,i) => (
               <Link key={i} to={cap.to} style={{ textDecoration:'none' }}>
                 <div
@@ -214,7 +214,7 @@ export default function Home() {
         <div style={{ maxWidth:1280, margin:'0 auto' }}>
           <Eyebrow>Trusted By</Eyebrow>
           <h2 className="heading-display reveal" style={{ fontSize:'clamp(2.5rem,5vw,4rem)', color:'#1a1a1a', marginBottom:'4rem' }}>Our Clients</h2>
-          <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill,minmax(220px,1fr))', border:'0.5px solid #e8e8e8' }}>
+          <div className='grid-3col-main' style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill,minmax(220px,1fr))', border:'0.5px solid #e8e8e8' }}>
             {CLIENTS.map((client,i) => (
               <div key={i} className="reveal" style={{ padding:'2rem', borderRight:'0.5px solid #e8e8e8', borderBottom:'0.5px solid #e8e8e8', transition:'background-color 0.2s ease' }}
                 onMouseEnter={e => e.currentTarget.style.backgroundColor='#f8f8f8'}
@@ -234,7 +234,7 @@ export default function Home() {
 
       {/* ── FEATURE SECTION ──────────────────────────── */}
       <section style={{ backgroundColor:'#111111', padding:'9rem 2rem' }}>
-        <div style={{ maxWidth:1280, margin:'0 auto', display:'grid', gridTemplateColumns:'1fr 1fr', gap:'8rem', alignItems:'center' }}>
+        <div className='mobile-stack' style={{ maxWidth:1280, margin:'0 auto', display:'grid', gridTemplateColumns:'1fr 1fr', gap:'8rem', alignItems:'start' }}>
           <div>
             <Eyebrow light>Where We Go</Eyebrow>
             <h2 className="heading-display reveal" style={{ fontSize:'clamp(2.5rem,5vw,4.5rem)', color:'#f0efed', lineHeight:1.1, marginBottom:'2rem' }}>
@@ -310,7 +310,7 @@ export default function Home() {
         <div style={{ maxWidth:1280, margin:'0 auto' }}>
           <Eyebrow>Our Edge</Eyebrow>
           <h2 className="heading-display reveal" style={{ fontSize:'clamp(2.5rem,5vw,4rem)', color:'#f0efed', marginBottom:'5rem' }}>Why Wraith International</h2>
-          <div style={{ display:'grid', gridTemplateColumns:'repeat(2,1fr)', border:'0.5px solid rgba(255,255,255,0.08)' }}>
+          <div className='grid-3col-main' style={{ display:'grid', gridTemplateColumns:'repeat(2,1fr)', border:'0.5px solid rgba(255,255,255,0.08)' }}>
             {WHY.map((w,i) => (
               <div key={i} className="reveal" style={{ padding:'3.5rem', borderRight:i%2===0?'0.5px solid rgba(255,255,255,0.08)':'none', borderBottom:i<2?'0.5px solid rgba(255,255,255,0.08)':'none', transition:'background-color 0.3s ease' }}
                 onMouseEnter={e => e.currentTarget.style.backgroundColor='rgba(255,255,255,0.02)'}
@@ -329,7 +329,7 @@ export default function Home() {
 
       {/* ── AUTOMATA CALLOUT ─────────────────────────── */}
       <section style={{ backgroundColor:'#f0efed', padding:0, overflow:'hidden' }}>
-        <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', minHeight:560 }}>
+        <div className='mobile-stack' style={{ display:'grid', gridTemplateColumns:'1fr 1fr', minHeight:560 }}>
           <div style={{ position:'relative', overflow:'hidden' }}>
             <img src={IMGS.aviation} alt="" loading="lazy"
               style={{ width:'100%', height:'100%', objectFit:'cover', position:'absolute', inset:0, transition:'transform 0.8s cubic-bezier(0.4,0,0.2,1)' }}

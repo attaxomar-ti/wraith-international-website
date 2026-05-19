@@ -18,14 +18,14 @@ export default function Capabilities() {
     <>
       <section style={{ backgroundColor:'#111111', minHeight:'62vh', display:'flex', alignItems:'center', justifyContent:'center', padding:'11rem 2rem 7rem', textAlign:'center' }}>
         <div>
-          <div className="anim-delay-2" style={{
+          <div className="anim-delay-2 page-hero-top" style={{
             fontFamily:'"Libre Baskerville", Georgia, serif',
             fontSize:'clamp(0.75rem, 2vw, 1.25rem)',
             fontWeight:400, letterSpacing:'0.5em',
             textTransform:'uppercase', color:'rgba(240,239,237,0.4)',
             marginBottom:'1.25rem', paddingLeft:'0.5em',
           }}>OUR</div>
-          <div className="anim-delay-2" style={{
+          <div className="anim-delay-2 page-hero-main" style={{
             fontFamily:'"Libre Baskerville", Georgia, serif',
             fontSize:'clamp(1.25rem, 4vw, 3rem)',
             fontWeight:400, letterSpacing:'0.5em',
