@@ -11,7 +11,6 @@ const IMGS = {
   fms:      '/img-container-ship.jpg',
   tactical: '/img-tactical-soldier.jpg',
   lodging:  '/img-military-tents.jpg',
-  aviation: '/img-fighter-jets.webp',
   training: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71',
 };
 
@@ -20,7 +19,6 @@ const CAPABILITIES = [
   { n:'02', title:'Foreign Military Sales', desc:'End-to-end management of FMS and DCS transactions including licensing, documentation, logistics, and ministry-level coordination.', tag:'Export Authorized', to:'/capabilities/fms', img: IMGS.fms },
   { n:'03', title:'Tactical Equipment', desc:'Complete tactical equipment solutions from personal protective equipment to surveillance infrastructure for law enforcement and military clients.', tag:'ITAR Compliant', to:'/capabilities/tactical', img: IMGS.tactical },
   { n:'04', title:'Lodging & Hospitality', desc:'Government lodging solutions and base support services for military and diplomatic operations worldwide.', tag:'GSA Schedule', to:'/capabilities/lodging', img: IMGS.lodging },
-  { n:'05', title:'Aviation Services', desc:'Military and civilian aviation products, pilot training, ATC services, and aircraft support through Automata Aviation — a Wraith company.', tag:'Civil & Military', to:'/capabilities/aviation-services', img: IMGS.aviation },
   { n:'06', title:'Training Services', desc:'Specialized training programs for law enforcement, military, and government clients, delivered in-country internationally.', tag:'Domestic & International', to:'/capabilities/training', img: IMGS.training },
 ];
 
@@ -314,34 +312,6 @@ export default function Home() {
                 <p style={{ fontFamily:'"Libre Baskerville"', fontSize:'0.9375rem', color:'rgba(255,255,255,0.42)', lineHeight:1.8 }}>{w.body}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <GoldLine />
-
-      {/* ── AUTOMATA CALLOUT ─────────────────────────── */}
-      <section style={{ backgroundColor:'#f0efed', padding:0, overflow:'hidden' }}>
-        <div style={{ display: m ? 'flex' : 'grid', flexDirection:'column', gridTemplateColumns: m ? undefined : '1fr 1fr', minHeight: m ? 'auto' : 560 }}>
-          <div style={{ position:'relative', overflow:'hidden' }}>
-            <img src={IMGS.aviation} alt="" loading="lazy"
-              style={{ width:'100%', height:'100%', objectFit:'cover', position:'absolute', inset:0, transition:'transform 0.8s cubic-bezier(0.4,0,0.2,1)' }}
-              onMouseEnter={e => e.target.style.transform='scale(1.03)'}
-              onMouseLeave={e => e.target.style.transform='scale(1)'}
-            />
-            <div style={{ position:'absolute', inset:0, backgroundColor:'rgba(8,9,10,0.55)' }} />
-          </div>
-          <div style={{ backgroundColor:'#111111', padding:'5rem 4rem', display:'flex', flexDirection:'column', justifyContent:'center' }}>
-            <Eyebrow>A Wraith Company</Eyebrow>
-            <h2 className="heading-display reveal" style={{ fontSize:'clamp(2rem,4vw,3.5rem)', color:'#f0efed', marginBottom:'1.5rem' }}>
-              Automata<br /><em style={{ color:'rgba(240,239,237,0.6)', fontStyle:'italic' }}>Aviation</em>
-            </h2>
-            <p className="reveal" style={{ fontFamily:'"Libre Baskerville"', fontSize:'1rem', fontWeight:300, color:'rgba(255,255,255,0.4)', lineHeight:1.8, marginBottom:'2.5rem' }}>
-              Dedicated aviation division providing military and civilian aviation products, pilot training, aircraft support, and ATC services to government and allied clients worldwide.
-            </p>
-            <div className="reveal">
-              <Link to="/aviation" className="btn-primary">Explore Automata Aviation</Link>
-            </div>
           </div>
         </div>
       </section>

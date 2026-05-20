@@ -41,8 +41,7 @@ export default function Training() {
       ]}
       relatedLinks={[
         { to: '/capabilities/tactical', label: 'Tactical Equipment' },
-        { to: '/capabilities/aviation-services', label: 'Aviation Services' },
-      ]}
+              ]}
     />
   );
 }

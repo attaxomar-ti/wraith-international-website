@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
-const BRANDED = ['/capabilities','/aviation','/news','/about','/contact'];
+const BRANDED = ['/capabilities','/news','/about','/contact'];
 
 export default function PageTransition() {
   const location = useLocation();

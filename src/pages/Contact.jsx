@@ -7,8 +7,7 @@ const SUBJECTS = [
   'Capabilities Briefing',
   'Contract Opportunity',
   'Foreign Military Sales',
-  'Aviation Services',
-  'Other',
+    'Other',
 ];
 
 const INFO = [

@@ -41,8 +41,7 @@ export default function Lodging() {
       ]}
       relatedLinks={[
         { to: '/capabilities/training', label: 'Training Services' },
-        { to: '/capabilities/aviation-services', label: 'Aviation Services' },
-      ]}
+              ]}
     />
   );
 }

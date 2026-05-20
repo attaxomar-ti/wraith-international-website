@@ -87,7 +87,7 @@ export default function Footer() {
         <div>
           <h4 style={{ fontFamily:'"Libre Baskerville"', fontSize:'0.625rem', fontWeight:500, letterSpacing:'0.2em', textTransform:'uppercase', color:'rgba(255,255,255,0.2)', marginBottom:'1.5rem' }}>Navigation</h4>
           <div style={{ display:'flex', flexDirection:'column' }}>
-            {[{label:'Home',to:'/'},{label:'Capabilities',to:'/capabilities'},{label:'Automata Aviation',to:'/aviation'},{label:'News',to:'/news'},{label:'About',to:'/about'},{label:'Contact',to:'/contact'}].map(l => (
+            {[{label:'Home',to:'/'},{label:'Capabilities',to:'/capabilities'},{label:'News',to:'/news'},{label:'About',to:'/about'},{label:'Contact',to:'/contact'}].map(l => (
               <Link key={l.to} to={l.to} className="footer-link">{l.label}</Link>
             ))}
           </div>

@@ -9,7 +9,6 @@ const CAPS = [
   { n:'02', title:'Foreign Military Sales', tag:'Export Authorized', desc:'End-to-end management of FMS and DCS transactions including licensing, documentation, logistics, and ministry-level coordination.', to:'/capabilities/fms', src:'/img-container-ship.jpg' },
   { n:'03', title:'Tactical Equipment', tag:'ITAR Compliant', desc:'Complete tactical equipment solutions from personal protective equipment to surveillance infrastructure.', to:'/capabilities/tactical', src:'/img-tactical-soldier.jpg' },
   { n:'04', title:'Lodging & Hospitality', tag:'GSA Schedule', desc:'Government lodging solutions and base support services for military and diplomatic operations worldwide.', to:'/capabilities/lodging', src:'/img-military-tents.jpg' },
-  { n:'05', title:'Aviation Services', tag:'Civil & Military', desc:'Military and civilian aviation through Automata Aviation — products, pilot training, ATC services, and aircraft support.', to:'/capabilities/aviation-services', src:'/img-aviation.jpg' },
   { n:'06', title:'Training Services', tag:'Domestic & International', desc:'Specialized training programs for law enforcement, military, and government clients, delivered internationally.', to:'/capabilities/training', src:'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=75' },
 ];
 

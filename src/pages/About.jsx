@@ -16,7 +16,7 @@ const TIMELINE = [
   { year:'Early 2000s', event:'Expansion into Foreign Military Sales and direct engagement with allied ministries of defense and interior across the MENA region. ITAR registration and export authorization acquired.' },
   { year:'2003+', event:'200+ government contracts fulfilled across domestic and international markets. FFL licensing acquired. SAM.gov registered as prime contractor. Sole source track record established.' },
   { year:'2010s', event:'Deepening presence across Qatar, Iraq, Jordan, and the broader Gulf region. Multiple sole source awards from Qatar Ministry of Interior and Iraq Security Forces. Aviation capability development begins.' },
-  { year:'2026', event:'Wraith International LLC formally established in Irvine, California. Automata Aviation launched as a dedicated aviation division. Full spectrum capability — weapons, tactical equipment, lodging, aviation, and training — under a single corporate platform.' },
+  { year:'2026', event:'Wraith International LLC formally established in Irvine, California.  launched as a dedicated aviation division. Full spectrum capability — weapons, tactical equipment, lodging, aviation, and training — under a single corporate platform.' },
 ];
 
 const LICENSES = [

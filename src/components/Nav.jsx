@@ -4,7 +4,6 @@ import { useIsMobile } from '../hooks/useIsMobile';
 
 const NAV_LINKS = [
   { label: 'Capabilities', to: '/capabilities' },
-  { label: 'Aviation',     to: '/aviation' },
   { label: 'News',         to: '/news' },
   { label: 'About',        to: '/about' },
   { label: 'Contact',      to: '/contact' },

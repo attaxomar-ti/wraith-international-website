@@ -275,7 +275,7 @@ export const ARTICLES = RAW.map(a => ({
 
 export const PUBLISHED = ARTICLES.filter(a => a.isPublished);
 
-export const CATEGORIES = ['All', 'Company News', 'Capabilities', 'Markets', 'Industry', 'Automata Aviation'];
+export const CATEGORIES = ['All', 'Company News', 'Capabilities', 'Markets', 'Industry'];
 
 export function getArticle(slug) {
   return ARTICLES.find(a => a.slug === slug) || null;

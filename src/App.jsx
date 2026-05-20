@@ -8,7 +8,6 @@ import PageTransition from './components/PageTransition';
 import ScrollProgress from './components/ScrollProgress';
 import Home from './pages/Home';
 import Capabilities from './pages/Capabilities';
-import Aviation from './pages/Aviation';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import News from './pages/News';
@@ -22,7 +21,6 @@ import SmallArms from './pages/capabilities/SmallArms';
 import FMS from './pages/capabilities/FMS';
 import Tactical from './pages/capabilities/Tactical';
 import Lodging from './pages/capabilities/Lodging';
-import AviationCap from './pages/capabilities/AviationCap';
 import Training from './pages/capabilities/Training';
 
 function ScrollToTop() {
@@ -54,9 +52,7 @@ function Inner() {
         <Route path="/capabilities/fms"               element={<Layout><FMS /></Layout>} />
         <Route path="/capabilities/tactical"          element={<Layout><Tactical /></Layout>} />
         <Route path="/capabilities/lodging"           element={<Layout><Lodging /></Layout>} />
-        <Route path="/capabilities/aviation-services" element={<Layout><AviationCap /></Layout>} />
         <Route path="/capabilities/training"          element={<Layout><Training /></Layout>} />
-        <Route path="/aviation"                       element={<Layout><Aviation /></Layout>} />
         <Route path="/about"                          element={<Layout><About /></Layout>} />
         <Route path="/contact"                        element={<Layout><Contact /></Layout>} />
         <Route path="/news"                           element={<Layout><News /></Layout>} />
